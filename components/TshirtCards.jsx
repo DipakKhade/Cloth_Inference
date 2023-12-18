@@ -1,7 +1,7 @@
 
 import React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 
 async function getProducts() {
   const res = await fetch(`${process.env.NEXT_PUBLIC__HOST}/api/products`, {
@@ -27,11 +27,11 @@ console.log(tshirts)
         <div className="mt-12 ml-8 hover:shadow-lg">
           <div  className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure>
-              <img
-                src={product.img}
+              <Image
+               src={product.img}
                 alt="Shoes"
                 className="w-[300px] h-[400px] rounded-sm"
-              />
+                ></Image>
             </figure>
             <div className="card-body">
               <h2 className="card-title">{product.name}</h2>
