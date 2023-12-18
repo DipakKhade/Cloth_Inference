@@ -35,13 +35,13 @@ async function getProducts(){
     const shirt=await shirt_products["products"].filter((obj)=> obj._id == params.id)[0]
     // console.log(shirt)
     
-    const state = useSelector((state) => state.description='hello world');
-const additemtoCart = () => {
-  // Dispatch the ITEM_ADDED action when the button is clicked
-  dispatch(itemAdded());
+//     const state = useSelector((state) => state.description='hello world');
+// const additemtoCart = () => {
+//   // Dispatch the ITEM_ADDED action when the button is clicked
+//   dispatch(itemAdded());
 
-  localStorage.setItem('id 1',JSON.stringify(shirt))
-}
+//   localStorage.setItem('id 1',JSON.stringify(shirt))
+// }
   return (
     <div className='mt-8  mr-9'>
       <div className='mt-20 mb-9'><ProductSection/></div>
@@ -124,7 +124,7 @@ const additemtoCart = () => {
         </div>
         <div className="flex">
           <span className="title-font font-medium text-2xl text-blue-900">₹{shirt.price}</span>
-          <button onClick={additemtoCart} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+          <button  className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
           Add to Cart  
           </button>
           <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
