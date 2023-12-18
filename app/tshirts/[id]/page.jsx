@@ -2,7 +2,8 @@
 import React from "react";
 import ProductSection from "../../../components/ProductSection";
 import VarifingPin from "../../../components/VarifingPin";
-
+import Image from "next/image";
+import { Fullscreen } from "lucide-react";
 
 async function getProducts(){
   
@@ -38,11 +39,12 @@ async function getProducts(){
         <section className="text-gray-600 body-font overflow-hidden">
           <div className="container px-5 py-2 mx-auto">
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
-              <img
-                alt="ecommerce"
+              <Image
+               alt="ecommerce"
                 className="lg:w-1/2 w-full lg:h-auto h-full object-cover object-center rounded "
                 src={tshirt.img}
-              />
+                width={full}
+              ></Image>
               <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                 <h2 className="text-sm title-font text-gray-500 tracking-widest">
                   Cloth Inference

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 async function getTrendingProducts() {
   const res = await fetch(`${process.env.NEXT_PUBLIC__HOST}/trending`, {
@@ -17,15 +18,16 @@ const TrendingCard = async () => {
   return (
     <>
       {products.map((product, index) => (
-        <Link href={`/trending/${product.id}`}>
-        <div  key={product.id} className="mt-12 ml-10 hover:shadow-lg">
+        <Link key={product.id} href={`/trending/${product.id}`}>
+        <div   className="mt-12 ml-10 hover:shadow-lg">
           <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure>
-              <img
-                src={product.trendingLinks}
+             <Image
+              src={product.trendingLinks}
                 alt="Shoes"
                 className="w-[300px] h-[400px] rounded-sm"
-              />
+                
+                ></Image>
             </figure>
             <div className="card-body">
               <h2 className="card-title">{product.trendingTag}</h2>

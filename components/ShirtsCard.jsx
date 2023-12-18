@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 
  async function getShirts(){
   const res=await fetch(`${process.env.NEXT_PUBLIC__HOST}/api/products`,{
@@ -20,11 +20,18 @@ const ShirtsCard = async() => {
       {shirts.map((shirt,index) => (
         
         
-            <Link href={`/shirts/${shirt._id}`}>
-        <div key={shirt._id} className='mt-12 ml-10 hover:shadow-lg' >
+            <Link key={shirt._id} href={`/shirts/${shirt._id}`}>
+        <div  className='mt-12 ml-10 hover:shadow-lg' >
           <div className='card card-compact w-96 bg-base-100 shadow-xl'>
             <figure>
-              <img src={shirt.img} alt='Shoes' className='w-[300px] rounded-sm' />
+             <Image
+             src={shirt.img}
+              alt='Shoes' 
+              className='w-[300px] rounded-sm'
+              width={400}
+             >
+
+             </Image>
             </figure>
             <div className='card-body'>
               <h2 className='card-title'>{shirt.name}</h2>

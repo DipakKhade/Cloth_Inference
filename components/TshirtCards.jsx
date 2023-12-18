@@ -23,8 +23,8 @@ console.log(tshirts)
   return (
     <>
       {tshirts.map((product) => (
-        <Link href={`/tshirts/${product._id}`}>
-        <div key={product._id} className="mt-12 ml-8 hover:shadow-lg">
+        <Link key={product._id} href={`/tshirts/${product._id}`}>
+        <div className="mt-12 ml-8 hover:shadow-lg">
           <div  className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure>
               <img

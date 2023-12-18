@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 async function getDresses() {
   const res = await fetch(`${process.env.NEXT_PUBLIC__HOST}/api/products`, {
     next: {
@@ -17,15 +17,16 @@ const dresses = products["products"].filter((obj)=> obj.category === 'dresses')
   return (
     <>
       {dresses.map((dress, index) => (
-        <Link href={`/dresses/${dress._id}`}>
-        <div className={`mt-12 hover:shadow-lg ${index===0 ? 'ml-6' : 'ml-0'}}`}>
+        <Link key={dress._id} href={`/dresses/${dress._id}`}>
+        <div  className={`mt-12 hover:shadow-lg ${index===0 ? 'ml-6' : 'ml-0'}}`}>
           <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure>
-              <img
-                src={dress.img}
+              <Image
+              src={dress.img}
                 alt="Shoes"
                 className="w-[300px] h-[400px] rounded-sm"
-              />
+                width={full}
+                ></Image>
             </figure>
             <div className="card-body">
               <h2 className="card-title">{dress.name}</h2>

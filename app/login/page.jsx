@@ -10,7 +10,7 @@ import User from "../../models/users"
 import bcrypt from "bcryptjs";
 // import { error } from 'console'
 
-const page = () => {
+const Page = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState();
@@ -190,4 +190,4 @@ try {
   );
 };
 
-export default page;
+export default Page;

@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Link from "next/link";
 import bcrypt from "bcryptjs"
 import { useRouter } from 'next/navigation'
-const page = () => {
+const Page = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -198,4 +198,4 @@ theme: "light",
   );
 };
 
-export default page;
+export default Page;
